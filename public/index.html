@@ -9,17 +9,40 @@
 </head>
 <body>
     <div id="cat-container">
+        Click/Touch to get crazy!
     </div>
     <div id='space-container'></div>
     <audio id="player" autoplay loop>
         <source src="catSong.mp3" type="audio/mp3">
     </audio>
     <script>
-        document.addEventListener('mousemove',()=>{
-            var audio = document.getElementById("player");
-            audio.play();
-            console.log('ding');
+        var started = false;
+        const loadAudio = ()=>{
+            return ()=>{           
+                 var audio = document.getElementById("player");
+                 if(started){
+                    audio.play();
+                 }
+            }
+        };
+        document.addEventListener('click',()=>{
+            started=true;
+            var target = document.getElementById('cat-container').innerText = '';
+            getCrazy();
+            loadAudio()();
         });
+        document.addEventListener('touchstart', ()=>{
+            started=true;
+            var target = document.getElementById('cat-container').innerText = '';
+            getCrazy();
+            loadAudio()();
+        });
+
+        const getCrazy = ()=>{
+            var target = document.getElementById('cat-container');
+            target.style.animationPlayState = "running";
+        }
+
     </script>
 </body>
 </html>

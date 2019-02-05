@@ -17,6 +17,14 @@ html{
     width: 100vw;
     height: 100vh;
     z-index: 10;
+    color:white;
+    text-align: center;
+    background-color:black;
+    animation: goToSpace;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-play-state: paused;
 }
 
 #space-container{
@@ -29,11 +37,11 @@ html{
     background-position: center;
     width: 60vw;
     height: 60vh;
-    z-index: 9;
+    /* z-index: 9; */
     animation: spaceanim;
     /* animation-direction: */
     animation-fill-mode: forwards;
-    animation-duration: 5s;
+    animation-duration: 2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
@@ -43,5 +51,13 @@ html{
     }
     to{
         transform: rotateZ(360deg);
+    }
+}
+@keyframes goToSpace{
+    from{
+        background-color: rgba(0,0,0,1);
+    }
+    to{
+        background-color:rgba(0,0,0,0);
     }
 }
