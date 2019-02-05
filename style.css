@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    font-size: 16px;
+}
+
+html{
+    overflow: hidden;
+}
+
+#cat-container{
+    position: relative;
+    background: url('./imgs/black_cat.png');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+}
+
+#space-container{
+    position: absolute;
+    top:20vh;
+    left: 20vw;
+    background: url('./imgs/space.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 60vw;
+    height: 60vh;
+    z-index: 9;
+    animation: spaceanim;
+    /* animation-direction: */
+    animation-fill-mode: forwards;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes spaceanim{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(360deg);
+    }
+}

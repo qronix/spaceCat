@@ -1,0 +1,25 @@
+<!doctype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CAT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+    <div id="cat-container">
+    </div>
+    <div id='space-container'></div>
+    <audio id="player" autoplay loop>
+        <source src="catSong.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        document.addEventListener('mousemove',()=>{
+            var audio = document.getElementById("player");
+            audio.play();
+            console.log('ding');
+        });
+    </script>
+</body>
+</html>
